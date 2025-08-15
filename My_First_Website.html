@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is my first HTML page.">
+    <meta name="keywords" content="HTML, beginner, web development">
+    <meta name="author" content="Rego Joshua Dudas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <link rel="stylesheet" href="Website Style.css">
+    <script>
+        function greet() {
+            alert("Hello! Welcome to my page.");
+        }
+    </script>
+</head>
+<body onload="greet()">
+
+    <div class="container">
+        <header class="fade-in">
+            <h1>Welcome to My First Webpage</h1>
+            <p style= "color: white"><i>(With implemented elements)</i></p>
+            <p class="highlight">Created by yours truly :)</p>
+        </header>
+
+        <section class="fade-in">
+            <h2>Things I Like to Do</h2>
+            <ul>
+                <li>Playing video games</li>
+                <li>Experimenting with fashion</li>
+                <li>Photography</li>
+                <li>Watching any form of media (videos, films, series, etc.)</li>
+            </ul>
+        </section>
+
+        <section class="fade-in">
+            <h2>Things I Dislike</h2>
+            <ol>
+                <li>Unintended Asymmetry</li>
+                <li>Disrespect</li>
+                <li>People who treat pets (or animals in general) wrong</li>
+            </ol>
+        </section>
+
+        <section class="fade-in">
+            <p>Visit my <a href="Profile.html" target="_blank">personal profile</a> for more info about me.</p>
+        </section>
+
+        <section class="fade-in">
+            <h2>My Favorite Song</h2>
+            <audio controls>
+                <source src="Kendrick Lamar - Not Like Us.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <section class="fade-in">
+            <h2>My Favorite Memory</h2>
+            <video controls>
+                <source src="Norris & Jinx.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section class="fade-in">
+            <h2>My Favorite Picture</h2>
+            <img src="Pic.jpg" alt="Honest reaction">
+        </section>
+
+        <section class="quote-box fade-in">
+            "Without the support of others you cannot do much by yourself. 
+            Like the word <i>unbreakable</i>, by removing the <i>un-</i> you become breakable."
+        </section>
+
+        <section class="fade-in">
+            <h2>My Recommendations</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thing</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Movie/Series?</td>
+                        <td>"Arcane"</td>
+                    </tr>
+                    <tr>
+                        <td>Books?</td>
+                        <td>"Berserk" by Kentaro Miura or "The Prince" by Niccolo Machiavelli</td>
+                    </tr>
+                    <tr>
+                        <td>Music artist?</td>
+                        <td>Low Roar, Tame Impala, Radiohead</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="fade-in">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+
+                <input type="submit" value="Send">
+            </form>
+        </section>
+    </div>
+
+    <script>
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
